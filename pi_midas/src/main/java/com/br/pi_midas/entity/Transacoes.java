@@ -1,10 +1,21 @@
 package com.br.pi_midas.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "tb_transacao")
 public class Transacoes {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idTransacao;
 	private String nomeTransacao;
-	private String categoria;
+	private Categoria categoria;
 	
 	public Transacoes () {
 		
@@ -26,12 +37,13 @@ public class Transacoes {
 		this.nomeTransacao = nomeTransacao;
 	}
 
-	public String getCategoria() {
+	public Categoria getCategoria() {
 		return categoria;
 	}
 
-	public void setCategoria(String categoria) {
+	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
 
+	
 }
