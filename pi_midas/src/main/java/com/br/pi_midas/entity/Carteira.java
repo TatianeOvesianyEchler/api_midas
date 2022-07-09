@@ -32,7 +32,7 @@ public class Carteira {
 	
 	@ManyToOne
 	@JoinColumn(name = "transacao_id")
-	private Transacoes transacao; 
+	private Transacao transacao; 
 	
 	public Carteira() {
 		
@@ -78,11 +78,11 @@ public class Carteira {
 		this.cliente = cliente;
 	}
 
-	public Transacoes getTransacao() {
+	public Transacao getTransacao() {
 		return transacao;
 	}
 
-	public void setTransacao(Transacoes transacao) {
+	public void setTransacao(Transacao transacao) {
 		this.transacao = transacao;
 	}
 }

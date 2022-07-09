@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_transacao")
-public class Transacoes {
+public class Transacao {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,7 @@ public class Transacoes {
 	private String nomeTransacao;
 	private Categoria categoria;
 	
-	public Transacoes () {
+	public Transacao () {
 		
 	}
 
