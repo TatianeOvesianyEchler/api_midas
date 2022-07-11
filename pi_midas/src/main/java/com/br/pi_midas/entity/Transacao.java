@@ -6,44 +6,42 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.br.pi_midas.Enum.Categoria;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 
 @Entity
 @Table(name = "tb_transacao")
 public class Transacao {
 
+	public Transacao() {
+
+	}
+
+	public Transacao(Long idTransacao, String nomeTransacao, Categoria categoria, Long cliente_id, String dataEntrada,
+			Double valor) {
+		super();
+		this.idTransacao = idTransacao;
+		this.nomeTransacao = nomeTransacao;
+		this.categoria = categoria;
+		this.cliente_id = cliente_id;
+		this.dataEntrada = dataEntrada;
+		this.valor = valor;
+	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idTransacao;
 	private String nomeTransacao;
-	private Categoria categoria;
-	
-	public Transacao () {
-		
-	}
+	public Categoria categoria;
+	private Long cliente_id;
 
-	public Long getIdTransacao() {
-		return idTransacao;
-	}
+	private String dataEntrada;
+	public Double valor;
+	private Double saldo;
 
-	public void setIdTransacao(Long idTransacao) {
-		this.idTransacao = idTransacao;
-	}
-
-	public String getNomeTransacao() {
-		return nomeTransacao;
-	}
-
-	public void setNomeTransacao(String nomeTransacao) {
-		this.nomeTransacao = nomeTransacao;
-	}
-
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-
-	
 }
