@@ -6,13 +6,12 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.br.pi_midas.entity.Cliente;
 import com.br.pi_midas.entity.Transacao;
-import com.br.pi_midas.repository.ClienteRepository;
 import com.br.pi_midas.repository.TransacaoRepository;
 
 @RestController
@@ -21,7 +20,6 @@ public class TransacaoController {
 
 	@Autowired
 	private TransacaoRepository repository;
-	private ClienteRepository Clienterepository;
 	
 	@GetMapping	
 	public List<Transacao> findAll(){
@@ -39,6 +37,17 @@ public class TransacaoController {
 	public Transacao Insert(@RequestBody Transacao transacao){
 		Transacao result = repository.save(transacao);
 		return result;
+	}
+	
+	@PutMapping(value = "/{id}")
+	public String update(@PathVariable Long id, @RequestBody Transacao transacao) {
+		Transacao updateTransacao = repository.findById(id).get();
+		updateTransacao.setNomeTransacao(transacao.getNomeTransacao());
+		updateTransacao.setDataEntrada(transacao.getDataEntrada());
+		updateTransacao.setValor(transacao.getValor());
+		updateTransacao.setCategoria(transacao.getCategoria());
+		repository.save(updateTransacao);
+		return "Transacao Atualizada";
 	}
 	
 	

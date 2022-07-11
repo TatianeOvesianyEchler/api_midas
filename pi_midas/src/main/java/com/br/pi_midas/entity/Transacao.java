@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.br.pi_midas.Enum.Categoria;
+import com.br.pi_midas.Enum.Status;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -12,6 +12,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.br.pi_midas.Enum.Perfil;
+import com.br.pi_midas.Enum.Status;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -36,6 +37,7 @@ public class Cliente {
 	private String DataDeNascimento;
 	private Perfil perfil;
 	private Long cliente_id;
+	private Status status;
 	
 	
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.br.pi_midas.Enum.Status;
 import com.br.pi_midas.entity.Carteira;
 import com.br.pi_midas.repository.CarteiraRepository;
 
@@ -51,6 +52,17 @@ public class CarteiraController {
 		return "Carteira Atualizada";
 	}
 	
+
+	@PutMapping(value = "/status/{id}")
+	public String desativar(@PathVariable Long id, @RequestBody Carteira carteira) {
+		Carteira updateCarteira = repository.findById(id).get();
+		updateCarteira.setStatus(carteira.getStatus());
+		repository.save(updateCarteira);
+		if(carteira.getStatus() == Status.ATIVO) {			
+			return "Carteira Ativada";
+		}
+		return "Carteira Desativada";
+	}
 	
 	
 	@DeleteMapping(value = "/{id}")
