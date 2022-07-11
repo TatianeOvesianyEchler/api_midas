@@ -39,9 +39,8 @@ public class Transacao {
 	private String nomeTransacao;
 	public Categoria categoria;
 	private Long cliente_id;
-
 	private String dataEntrada;
 	public Double valor;
-	private Double saldo;
+	private Double saldo = 100.00;
 
 }
