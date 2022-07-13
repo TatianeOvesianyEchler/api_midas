@@ -6,8 +6,8 @@
 <p align="center"> <img src = https://media.moneytimes.com.br/uploads/2019/11/cofrinho-ouro.jpg /> </p>
 
 
-<h1 align="center"> App-cadasto-serasa </h1>
-<p align="center">🚀 API desenvolvida durante as aulas do curso  "Full Stack Java e Dados" através do programa Tranforme-se da Serasa Experian/p>
+<h1 align="center"> Midas Controle Financeiro </h1>
+<p align="center">🚀 API desenvolvida durante as aulas do curso  "Full Stack Java e Dados" através do programa Tranforme-se da Serasa Experian</p>
 
 <hr>
 
