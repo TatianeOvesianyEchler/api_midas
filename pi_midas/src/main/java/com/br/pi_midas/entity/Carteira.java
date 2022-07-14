@@ -30,7 +30,7 @@ public class Carteira {
 
 	public Carteira(Long idCarteira, String nome, String dataDeEntrada, String responsavel,  Status status,
 			List<Cliente> clientes) {
-		super();
+
 		this.idCarteira = idCarteira;
 		this.nome = nome;
 		this.dataDeEntrada = dataDeEntrada;
@@ -51,7 +51,7 @@ public class Carteira {
 	
 	
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
-	@JoinColumn(name = "cliente_id") // Esta coluna está na tabela "cliente".
+	@JoinColumn(name = "carteira_id") // Esta coluna está na tabela "cliente".
 	private List<Cliente> clientes;
 
 }

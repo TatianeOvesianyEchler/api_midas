@@ -30,7 +30,11 @@
 			<version>1.18.24</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper-examples</artifactId>
+			<version>3.1.0</version>
+		</dependency>
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>

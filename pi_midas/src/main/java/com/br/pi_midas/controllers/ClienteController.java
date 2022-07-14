@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.br.pi_midas.Enum.Status;
+import com.br.pi_midas.dto.ClienteDTO;
 import com.br.pi_midas.entity.Cliente;
-import com.br.pi_midas.repository.ClienteRepository;
+import com.br.pi_midas.serivce.ClienteService;
 
 @RestController
 @RequestMapping(value ="/cliente")
@@ -21,55 +21,37 @@ public class ClienteController {
 
 
 	@Autowired
-	private ClienteRepository repository;
+	private ClienteService service;
 	
 	@GetMapping	
-	public List<Cliente> findAll(){
-		List<Cliente> result = repository.findAll();
-		return result;
+	public List<ClienteDTO> findAll(){
+		return service.buscarTodosClientes();
 	}
 	
 	@GetMapping(value = "/{id}")
-	public Cliente findById(@PathVariable Long id){
-		Cliente result = repository.findById(id).get();
-		return result;
+	public ClienteDTO findById(@PathVariable Long id){
+		return service.buscarUmCliente(id);
 	}
 	
 	
 	@PostMapping
-	public Cliente Insert(@RequestBody Cliente cliente){
-		Cliente result = repository.save(cliente);
-		return result;
+	public ClienteDTO Insert(@RequestBody Cliente cliente){
+		return service.cadastrarCliente(cliente);
 	}
 	
 	@PutMapping(value = "/{id}")
-	public String update(@PathVariable Long id, @RequestBody Cliente cliente) {
-		Cliente updateCliente = repository.findById(id).get();
-		updateCliente.setNome(cliente.getNome());
-		updateCliente.setEmail(cliente.getEmail());
-		updateCliente.setDataDeNascimento(cliente.getDataDeNascimento());
-		updateCliente.setPerfil(cliente.getPerfil());
-		updateCliente.setSenha(cliente.getSenha());
-		
-		repository.save(updateCliente);
-		return "Cliente Atualizada";
+	public ClienteDTO update(@PathVariable Long id, @RequestBody Cliente cliente) {
+		return service.atualizarCliente(id,cliente);
 	}
 	
+
 	@PutMapping(value = "/status/{id}")
-	public String desativar(@PathVariable Long id, @RequestBody Cliente cliente) {
-		Cliente updatecliente = repository.findById(id).get();
-		updatecliente.setStatus(cliente.getStatus());
-		repository.save(updatecliente);
-		if(cliente.getStatus() == Status.ATIVO) {			
-			return "Cliente Ativo";
-		}
-		return "Cliente Inativo";
+	public ClienteDTO desativarAtivar(@PathVariable Long id,@RequestBody Cliente cliente) {
+		return service.ativarDesativarCliente(id,cliente);
 	}
 	
 	@DeleteMapping(value = "/{id}")
 	public String delete(@PathVariable Long id){
-		Cliente deleteResult = repository.findById(id).get();
-		repository.delete(deleteResult);
-		return "Deletado Cliente com Id : " + id;
+		return service.deletarCliente(id);
 	}
 }

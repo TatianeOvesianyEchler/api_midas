@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.br.pi_midas.Enum.Status;
+import com.br.pi_midas.dto.CarteiraDTO;
 import com.br.pi_midas.entity.Carteira;
-import com.br.pi_midas.repository.CarteiraRepository;
+import com.br.pi_midas.serivce.CarteiraService;
 
 
 @RestController
@@ -22,57 +22,41 @@ import com.br.pi_midas.repository.CarteiraRepository;
 public class CarteiraController {
 	
 	@Autowired
-	private CarteiraRepository repository;
+	private CarteiraService service;
+	
 	
 	@GetMapping	
-	public List<Carteira> findAll(){
-		List<Carteira> result = repository.findAll();
-		return result;
+	public List<CarteiraDTO> todasCarteiras(){
+		return	service.buscarTodasCarteiras();
 	}
 	
+	
 	@GetMapping(value = "/{id}")
-	public Carteira findById(@PathVariable Long id){
-		Carteira result = repository.findById(id).get();
-		return result;
+	public CarteiraDTO findById(@PathVariable Long id){
+		return service.buscarUmaCarteira(id);
 	}
 	
 	@PostMapping
-	public Carteira Insert(@RequestBody Carteira carteira){
-		Carteira result = repository.save(carteira);
-		return result;
+	public CarteiraDTO Insert(@RequestBody Carteira carteira){
+		return  service.cadastrarCarteira(carteira);
 	}
 
 	@PutMapping(value = "/{id}")
-	public String update(@PathVariable Long id, @RequestBody Carteira carteira) {
-		Carteira updateCarteira = repository.findById(id).get();
-		updateCarteira.setNome(carteira.getNome());
-		updateCarteira.setResponsavel(carteira.getResponsavel());
-		updateCarteira.setDataDeEntrada(carteira.getDataDeEntrada());
-		repository.save(updateCarteira);
-		return "Carteira Atualizada";
+	public CarteiraDTO update(@PathVariable Long id,@RequestBody Carteira carteira) {
+		return service.atualizarCarteira(id,carteira);
 	}
 	
 
 	@PutMapping(value = "/status/{id}")
-	public String desativar(@PathVariable Long id, @RequestBody Carteira carteira) {
-		Carteira updateCarteira = repository.findById(id).get();
-		updateCarteira.setStatus(carteira.getStatus());
-		repository.save(updateCarteira);
-		if(carteira.getStatus() == Status.ATIVO) {			
-			return "Carteira Ativada";
-		}
-		return "Carteira Desativada";
+	public CarteiraDTO desativarAtivar(@PathVariable Long id,@RequestBody Carteira carteira) {
+		return service.ativarDesativarCarteira(id,carteira);
 	}
 	
 	
 	@DeleteMapping(value = "/{id}")
 	public String delete(@PathVariable Long id){
-		Carteira deleteResult = repository.findById(id).get();
-		repository.delete(deleteResult);
-		return "Deletado Carteira com Id : " + id;
+		return service.deletarCarteira(id);
 	}
-	
-		
-	
+
 }
 	

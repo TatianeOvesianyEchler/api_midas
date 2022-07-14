@@ -7,7 +7,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import com.br.pi_midas.Enum.Categoria;
-import com.br.pi_midas.Enum.Status;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -23,11 +22,11 @@ public class Transacao {
 
 	}
 
-	public Transacao(Long idTransacao, String nomeTransacao, Categoria categoria, Long cliente_id, String dataEntrada,
+	public Transacao(Long idTransacao, String nome, Categoria categoria, Long cliente_id, String dataEntrada,
 			Double valor) {
 		super();
 		this.idTransacao = idTransacao;
-		this.nomeTransacao = nomeTransacao;
+		this.nome = nome;
 		this.categoria = categoria;
 		this.cliente_id = cliente_id;
 		this.dataEntrada = dataEntrada;
@@ -37,11 +36,11 @@ public class Transacao {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idTransacao;
-	private String nomeTransacao;
+	private String nome;
 	public Categoria categoria;
 	private Long cliente_id;
 	private String dataEntrada;
 	public Double valor;
-	private Double saldo = 100.00;
 
 }
+	
