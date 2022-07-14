@@ -1,0 +1,31 @@
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+  
+  .roboto {
+    font-family: "Roboto" !important;
+  }
+
+  .cor-botao {
+    color: #f4b036;
+    background-color: #b03851;
+    border-color: #b03851;
+  }
+
+  .cor-botao:hover {
+    color: #f4b036;
+    background-color: #723e4e;
+    border-color: #723e4e;
+  }
+
+  .cor-botao:disabled, .cor-botao.disabled {
+    color: #b03851;
+    background-color: #f4b036;
+    border-color: #f4b036;
+  }
+
+  header.masterhead-color {
+    color: #f4b036 !important;
+  }
