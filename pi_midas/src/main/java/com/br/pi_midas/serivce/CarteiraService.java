@@ -40,7 +40,7 @@ public class CarteiraService {
 	public CarteiraDTO atualizarCarteira(Long id,Carteira carteira) {
 		Carteira updateCarteira = repository.findById(id).get();
 		updateCarteira.setNome(carteira.getNome());
-		updateCarteira.setResponsavel(carteira.getResponsavel());
+		updateCarteira.setResponsavel_id(carteira.getResponsavel_id());
 		updateCarteira.setDataDeEntrada(carteira.getDataDeEntrada());
 		repository.save(updateCarteira);
 		return toCarteiraDTO(updateCarteira);

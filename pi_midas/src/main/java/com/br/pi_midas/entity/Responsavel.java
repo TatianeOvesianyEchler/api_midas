@@ -11,20 +11,26 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.br.pi_midas.Enum.Perfil;
-import com.br.pi_midas.Enum.Status;
-
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "tb_cliente")
-public class Cliente {
+@Table(name = "tb_responsavel")
+public class Responsavel {
 
-	public Cliente() {
+	public Responsavel() {
 
+	}
+
+	public Responsavel(Long id, String nome, String email, String senha, List<Carteira> carteiras) {
+
+		this.id = id;
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+		this.carteiras = carteiras;
 	}
 
 	@Id
@@ -33,13 +39,11 @@ public class Cliente {
 	private String nome;
 	private String email;
 	private String senha;
-	private String DataDeNascimento;
-	private Perfil perfil;
-	private Long carteira_id;
-	private Status status;
 
-	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
-	@JoinColumn(name = "cliente_id") // Esta coluna está na tabela "transacao".
-	private List<Transacao> transacoes;
+	@OneToMany
+	@JoinColumn(name = "responsavel_id") // Esta coluna está na tabela "carteira".
+	private List<Carteira> carteiras;
 
+	
+	
 }

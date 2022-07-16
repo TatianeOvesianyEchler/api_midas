@@ -22,11 +22,11 @@ public class CarteiraDTO {
 	
 	private String nome;
 	private String dataDeEntrada;
-	private String responsavel;
 	private Status status;
+	private Long responsavel_id;
 	
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
-	@JoinColumn(name = "carteira_id") // Esta coluna está na tabela "cliente".
+	@JoinColumn(name = "clientes_id") // Esta coluna está na tabela "cliente".
 	private List<Cliente> clientes;
 
-}
+}	

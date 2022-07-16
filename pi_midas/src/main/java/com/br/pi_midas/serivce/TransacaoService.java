@@ -17,7 +17,6 @@ public class TransacaoService {
 	
 	@Autowired(required = false)
 	private ModelMapper modelMapper;
-	
 	@Autowired
 	private TransacaoRepository repository;
 
