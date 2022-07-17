@@ -2,6 +2,7 @@ package com.br.pi_midas.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +16,10 @@ import com.br.pi_midas.dto.ClienteDTO;
 import com.br.pi_midas.entity.Cliente;
 import com.br.pi_midas.serivce.ClienteService;
 
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@SpringBootApplication
+@EnableSwagger2
 @RestController
 @RequestMapping(value ="/cliente")
 public class ClienteController {
