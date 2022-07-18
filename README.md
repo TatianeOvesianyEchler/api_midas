@@ -7,7 +7,7 @@
 
 
 <h1 align="center"> Midas - Planejamento Financeiro </h1>
-<p align="center">🚀 API desenvolvida durante as aulas do curso  "Full Stack Java e Dados" através do programa Tranforme-se da Serasa Experian</p>
+<p align="center">🚀 API desenvolvida durante as aulas do curso  "Full Stack Java e Dados" através do programa Transforme-se da Serasa Experian</p>
 
 <hr>
 
