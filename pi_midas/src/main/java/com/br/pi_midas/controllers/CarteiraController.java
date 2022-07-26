@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.br.pi_midas.dto.CarteiraDTO;
 import com.br.pi_midas.entity.Carteira;
-import com.br.pi_midas.serivce.CarteiraService;
+import com.br.pi_midas.service.CarteiraService;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -24,7 +27,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @RestController
 @RequestMapping(value = "/carteira")
 public class CarteiraController {
-	
+	                                                                     
 	@Autowired
 	private CarteiraService service;
 	
@@ -36,7 +39,8 @@ public class CarteiraController {
 	
 	
 	@GetMapping(value = "/{id}")
-	public CarteiraDTO findById(@PathVariable Long id){
+	public CarteiraDTO findById(@PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails){
+		System.out.println(userDetails);
 		return service.buscarUmaCarteira(id);
 	}
 	
@@ -58,6 +62,7 @@ public class CarteiraController {
 	
 	
 	@DeleteMapping(value = "/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public String delete(@PathVariable Long id){
 		return service.deletarCarteira(id);
 	}

@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,10 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.br.pi_midas.dto.ClienteDTO;
 import com.br.pi_midas.dto.ResponsavelDTO;
 import com.br.pi_midas.entity.Responsavel;
-import com.br.pi_midas.serivce.ResponsavelService;
+import com.br.pi_midas.service.ResponsavelService;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -35,7 +37,8 @@ public class ResponsavelController {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponsavelDTO findById(@PathVariable Long id){
+	public ResponsavelDTO findById(@PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails){
+		System.out.println(userDetails);
 		return service.buscarUmResponsavel(id);
 	}
 	
@@ -56,6 +59,7 @@ public class ResponsavelController {
 	}
 	
 	@DeleteMapping(value = "/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public String delete(@PathVariable Long id){
 		return service.deletarResponsavel(id);
 }

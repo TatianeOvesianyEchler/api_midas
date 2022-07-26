@@ -3,6 +3,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.br.pi_midas.dto.ClienteDTO;
 import com.br.pi_midas.entity.Cliente;
-import com.br.pi_midas.serivce.ClienteService;
+import com.br.pi_midas.service.ClienteService;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -34,7 +37,8 @@ public class ClienteController {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ClienteDTO findById(@PathVariable Long id){
+	public ClienteDTO findById(@PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails){
+		System.out.println(userDetails);
 		return service.buscarUmCliente(id);
 	}
 	
@@ -56,6 +60,7 @@ public class ClienteController {
 	}
 	
 	@DeleteMapping(value = "/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public String delete(@PathVariable Long id){
 		return service.deletarCliente(id);
 	}

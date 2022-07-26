@@ -3,6 +3,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.br.pi_midas.dto.TransacaoDTO;
 import com.br.pi_midas.entity.Transacao;
-import com.br.pi_midas.serivce.TransacaoService;
+import com.br.pi_midas.service.TransacaoService;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
@@ -49,6 +50,7 @@ public class TransacaoController {
 	
 	
 	@DeleteMapping(value = "/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
 	public String delete(@PathVariable Long id){
 		return	service.deletarTranscao(id);
 	}

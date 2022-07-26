@@ -1,4 +1,4 @@
-package com.br.pi_midas.serivce;
+package com.br.pi_midas.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
