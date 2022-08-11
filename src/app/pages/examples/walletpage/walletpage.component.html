@@ -1,0 +1,224 @@
+<nav
+  class="navbar navbar-expand-lg fixed-top navbar-transparent"
+  color-on-scroll="100"
+  id="navbar-top"
+>
+  <div class="container">
+    <div class="navbar-translate">
+      <a
+        class="navbar-brand"
+        placement="bottom"
+        [routerLink]="['/home']"
+        target="_blank"
+      >
+        <span> MIDA$ • </span> Controle Financeiro
+      </a>
+      <button
+        aria-controls="navigation-index"
+        aria-label="Toggle navigation"
+        class="navbar-toggler navbar-toggler"
+        [attr.aria-expanded]="!isCollapsed"
+        (click)="isCollapsed = !isCollapsed"
+        id="navigation"
+        type="button"
+      >
+        <span class="navbar-toggler-bar bar1"> </span>
+        <span class="navbar-toggler-bar bar2"> </span>
+        <span class="navbar-toggler-bar bar3"> </span>
+      </button>
+    </div>
+    <div
+      class="navbar-collapse justify-content-end"
+      [collapse]="isCollapsed"
+      id="navigation"
+    >
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand"><a> BLK• </a></div>
+          <div class="col-6 collapse-close text-right">
+            <button
+              aria-controls="navigation-index"
+              aria-label="Toggle navigation"
+              class="navbar-toggler"
+              [attr.aria-expanded]="!isCollapsed"
+              (click)="isCollapsed = !isCollapsed"
+              id="navigation"
+              type="button"
+            >
+              <i class="tim-icons icon-simple-remove"> </i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']"> Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/landing']"> Perfil de Investidor </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/wallet']"> Carteiras </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/profile']"> Perfil </a>
+        </li>
+        <li class="nav-item" [routerLink]="['/home']">
+          <a
+            class="nav-link btn btn-default d-none d-lg-block"
+            href="javascript:void(0)"
+          >
+            <i class="tim-icons icon-single-02"> </i> Login
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="wrapper">
+  <div class="page-header">
+    <img class="dots" src="assets/img/dots.png" />
+
+    <img class="path" src="assets/img/path4.png" />
+
+    <div class="container align-items-center">
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <h1 class="wallet-title text-left">Controle Financeiro</h1>
+          <h5 class="text-on-back">$</h5>
+          <p class="wallet-description">
+            Cadastre suas transações de receita e despesa e acompanhe o seu saldo.<br>
+            Alcance seus objetivos através de planejamento e investimentos adequados para o seu perfil.
+          </p>
+          <button class="btn btn-primary mr-1">Consulte suas recomendações de investimento</button>
+          
+        </div>
+        <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+          <div class="card card-coin card-plain">
+            <div class="card-header">
+              <img
+                class="img-center img-fluid rounded-circle"
+                src="assets/img/mike.jpg"
+              />
+
+              <h4 class="title">Suas carteiras</h4>
+            </div>
+            <div class="card-body">
+              <tabset
+                class="nav-tabs-danger justify-content-center tab-subcategories"
+              >
+                <tab heading="Conservador">
+                  <div>
+                    <table class="table tablesorter" id="plain-table">
+                      <tbody>
+                        <tr>
+                          <td>RECEITAS</td>
+                          <td>7.342</td>
+                        </tr>
+                        <tr>
+                          <td>DESPESAS</td>
+                          <td>7.342</td>
+                        </tr>
+                        <tr>
+                          <td>SALDO</td>
+                          <td>7.342</td>
+                        </tr>
+                        <tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </tab>
+                <tab heading="Moderado">
+                  <div>
+                    <table class="table tablesorter" id="plain-table">
+                      <tbody>
+                        <tr>
+                          <td>RECEITAS</td>
+                          <td>7.342</td>
+                        </tr>
+                        <tr>
+                          <td>DESPESAS</td>
+                          <td>7.342</td>
+                        </tr>
+                        <tr>
+                          <td>SALDO</td>
+                          <td>7.342</td>
+                        </tr>
+                        <tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </tab>
+                <tab heading="Arrojado">
+                  <div>
+                    <table class="table tablesorter" id="plain-table">
+                      <tbody>
+                        <tr>
+                          <td>JU</td>
+                        </tr>
+                        <tr>
+                          <td>TATI</td>
+                        </tr>
+                        <tr>
+                          <td>EDI</td>
+                        </tr>
+                        <tr>
+                          <td>DANI</td>
+                        </tr>
+                        <tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </tab>
+              </tabset>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"><h1 class="title">MIDA$</h1></div>
+        <div class="col-md-3">
+          <h3 class="title">Desenvolvido por:</h3>
+            <a class="nav-link"> Daniele Silveira </a>
+            <a class="nav-link"> Edilaine Lima </a>
+            <a class="nav-link"> Juliana Hansen </a>
+            <a class="nav-link"> Tatiane Echler </a>
+        </div>
+        <div class="col-md-3">
+          <h3 class="title">Tecnologias utilizadas:</h3>
+          <div class="btn-wrapper profile">
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+              target="_blank"
+            >
+              <i class="fab fa-java"> </i>
+            </a>
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+              target="_blank"
+            >
+              <i class="fab fa-angular"></i>
+            </a>
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple"
+              target="_blank"
+            >
+              <i class="fab fa-html5"> </i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <h3 class="title">Agradecimento:</h3>
+          <div class="btn-wrapper profile">
+            <img id="bBbWuz2rBzmICpVNR5TqQpzBkMQ4ZN7Z" width="201" height="54" class="widget widget-image lazyloaded" data-original="https://images.assets-landingi.com/a4p9tPpb/assina.png" data-src="https://images.assets-landingi.com/U2ZWdZNK4umPj89g/assina.png" data-srcset="https://images.assets-landingi.com/U2ZWdZNK4umPj89g/assina.png 1x, https://images.assets-landingi.com/a4p9tPpb/assina.png 2x" alt="" srcset="https://images.assets-landingi.com/U2ZWdZNK4umPj89g/assina.png 1x, https://images.assets-landingi.com/a4p9tPpb/assina.png 2x" src="https://images.assets-landingi.com/U2ZWdZNK4umPj89g/assina.png">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
