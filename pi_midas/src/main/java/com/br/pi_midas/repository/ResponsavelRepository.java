@@ -7,8 +7,5 @@ import com.br.pi_midas.entity.Responsavel;
 
 @Repository
 public interface ResponsavelRepository extends JpaRepository<Responsavel, Long> {
-
-	//@Query("SELECT u FROM User u WHERE u.userName =:userName")
-	Responsavel findByResponsavel(String responsavel);
 	
 }

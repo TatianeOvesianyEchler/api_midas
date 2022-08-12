@@ -37,8 +37,7 @@ public class ClienteController {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ClienteDTO findById(@PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails){
-		System.out.println(userDetails);
+	public ClienteDTO findById(@PathVariable Long id){
 		return service.buscarUmCliente(id);
 	}
 	
@@ -60,7 +59,7 @@ public class ClienteController {
 	}
 	
 	@DeleteMapping(value = "/{id}")
-	@PreAuthorize("hasRole('ADMIN')")
+	//@PreAuthorize("hasRole('ADMIN')")
 	public String delete(@PathVariable Long id){
 		return service.deletarCliente(id);
 	}

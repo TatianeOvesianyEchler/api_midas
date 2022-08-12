@@ -1,5 +1,6 @@
 package com.br.pi_midas.dto;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -17,17 +18,19 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ClienteDTO {
+public class ClienteDTO implements Serializable {
 
+	
+	private static final long serialVersionUID = 1L;
+	
 	private String nome;
 	private String email;
 	private String senha;
 	private String DataDeNascimento;
 	private Perfil perfil;
-	private Long cliente_id;
+	private Long carteira_id;
 	private Status status;
 	
-	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
-	@JoinColumn(name = "cliente_id") // Esta coluna está na tabela "transacao".
+	
 	private List<Transacao> transacoes;
 }

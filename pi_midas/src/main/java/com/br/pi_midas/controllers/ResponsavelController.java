@@ -37,8 +37,7 @@ public class ResponsavelController {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponsavelDTO findById(@PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails){
-		System.out.println(userDetails);
+	public ResponsavelDTO findById(@PathVariable Long id){
 		return service.buscarUmResponsavel(id);
 	}
 	
@@ -59,7 +58,7 @@ public class ResponsavelController {
 	}
 	
 	@DeleteMapping(value = "/{id}")
-	@PreAuthorize("hasRole('ADMIN')")
+	//@PreAuthorize("hasRole('ADMIN')")
 	public String delete(@PathVariable Long id){
 		return service.deletarResponsavel(id);
 }

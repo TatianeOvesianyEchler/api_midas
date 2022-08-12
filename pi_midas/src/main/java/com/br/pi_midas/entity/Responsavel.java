@@ -1,5 +1,6 @@
 package com.br.pi_midas.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -17,7 +18,9 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "tb_responsavel")
-public class Responsavel {
+public class Responsavel implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	public Responsavel() {
 

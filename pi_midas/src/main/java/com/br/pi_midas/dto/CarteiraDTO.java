@@ -25,8 +25,7 @@ public class CarteiraDTO {
 	private Status status;
 	private Long responsavel_id;
 	
-	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
-	@JoinColumn(name = "clientes_id") // Esta coluna está na tabela "cliente".
+	
 	private List<Cliente> clientes;
 
 }	

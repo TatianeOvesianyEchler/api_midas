@@ -50,7 +50,7 @@ public class TransacaoController {
 	
 	
 	@DeleteMapping(value = "/{id}")
-	@PreAuthorize("hasRole('ADMIN')")
+	///@PreAuthorize("hasRole('ADMIN')")
 	public String delete(@PathVariable Long id){
 		return	service.deletarTranscao(id);
 	}

@@ -39,8 +39,8 @@ public class CarteiraController {
 	
 	
 	@GetMapping(value = "/{id}")
-	public CarteiraDTO findById(@PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails){
-		System.out.println(userDetails);
+	public CarteiraDTO findById(@PathVariable Long id){
+		
 		return service.buscarUmaCarteira(id);
 	}
 	
@@ -62,7 +62,7 @@ public class CarteiraController {
 	
 	
 	@DeleteMapping(value = "/{id}")
-	@PreAuthorize("hasRole('ADMIN')")
+	//@PreAuthorize("hasRole('ADMIN')")
 	public String delete(@PathVariable Long id){
 		return service.deletarCarteira(id);
 	}
