@@ -8,7 +8,7 @@
       <a
         class="navbar-brand"
         placement="bottom"
-        [routerLink]="['/home']"
+        [routerLink]="['#home']"
         target="_blank"
       >
         <span> MIDA$ • </span> Controle Financeiro
@@ -51,8 +51,11 @@
         </div>
       </div>
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']"> Home </a>
+        <li class="nav-item" [routerLink]="['/home']">
+          <a
+            class="nav-link"
+            href="#inicial"
+          > Home </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/landing']"> Perfil de investidor </a>
@@ -63,10 +66,10 @@
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/profile']"> Perfil </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" [routerLink]="['/home']">
           <a
             class="nav-link btn btn-default d-none d-lg-block"
-            href="javascript:void(0)"
+            href="#login"
           >
             <i class="tim-icons icon-single-02"> </i> Login
           </a>
@@ -75,7 +78,7 @@
     </div>
   </div>
 </nav>
-<div class="wrapper">
+<div class="wrapper" id="inicial">
   <div class="page-header header-filter">
     <div class="squares square1"></div>
     <div class="squares square2"></div>
@@ -93,7 +96,7 @@
       </div>
     </div>
   </div>
-  <div class="justify-content-center d-flex">
+  <div class="justify-content-center d-flex" id="login">
     <div class="card card-register align-items-center col-3">
       <div class="card-header">
         <h4 class="card-title text-white w-auto p-3 titulo-cadastro">Login</h4>

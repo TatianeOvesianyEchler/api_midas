@@ -51,8 +51,11 @@
         </div>
       </div>
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/home']"> Home </a>
+        <li class="nav-item" [routerLink]="['/home']">
+          <a
+            class="nav-link"
+            href="#inicial"
+          > Home </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/landing']"> Perfil de Investidor </a>
@@ -66,7 +69,7 @@
         <li class="nav-item" [routerLink]="['/home']">
           <a
             class="nav-link btn btn-default d-none d-lg-block"
-            href="javascript:void(0)"
+            href="#login"
           >
             <i class="tim-icons icon-single-02"> </i> Login
           </a>
@@ -145,7 +148,7 @@
                     <label class="col-sm-3 col-form-label"> Categoria </label>
                     <div class="col-sm-9">
                       <div class="form-group">
-                        <select class="form-control">
+                        <select class="form-control text-muted">
                           <option value="receita">Receita</option>
                           <option value="despesa">Despesa</option>
                         </select>
