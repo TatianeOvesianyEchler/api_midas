@@ -34,7 +34,7 @@
     >
       <div class="navbar-collapse-header">
         <div class="row">
-          <div class="col-6 collapse-brand"><a> BLK• </a></div>
+          <div class="col-6 collapse-brand"><a> MIDAS• </a></div>
           <div class="col-6 collapse-close text-right">
             <button
               aria-controls="navigation-index"
@@ -78,8 +78,8 @@
     </div>
   </div>
 </nav>
-<div class="wrapper" style="margin-top: 50px;">
-  <div class="page-header">
+<div class="wrapper" style="margin-top: 0px;">
+  <div class="page-header" style="margin-bottom: 250px;">
     <img class="dots" src="assets/img/dots.png" />
 
     <img class="path" src="assets/img/path4.png" />
@@ -90,10 +90,9 @@
           <h1 class="profile-title text-left">Controle Financeiro</h1>
           <h5 class="text-on-back">$</h5>
           <p class="profile-description">
-            Cadastre suas transações de receita e despesa e acompanhe o seu saldo.<br>
-            Alcance seus objetivos através de planejamento e investimentos adequados para o seu perfil.
+            Consulte os clientes cadastrados em suas carteiras para cada perfil de investidor.
           </p>
-          <button class="btn btn-primary mr-1">Consulte suas recomendações de investimento</button>
+          <button class="btn btn-primary mr-1">Cadastre suas recomendações de investimento</button>
           
         </div>
         <div class="col-lg-4 col-md-6 ml-auto mr-auto">
@@ -104,86 +103,65 @@
                 src="assets/img/mike.jpg"
               />
 
-              <h4 class="title">Sua carteira</h4>
+              <h4 class="title">Sua carteira de clientes</h4>
             </div>
             <div class="card-body">
               <tabset
                 class="nav-tabs-danger justify-content-center tab-subcategories"
               >
-                <tab heading="Saldo">
+                <tab heading="Conservador">
                   <div>
-                    <table class="table tablesorter" id="plain-table">
+                    <table class="table tablesorter" id="conservador">
                       <tbody>
                         <tr>
-                          <td>RECEITAS</td>
-                          <td>7.342</td>
+                          <td>PESSOA 1</td>
                         </tr>
                         <tr>
-                          <td>DESPESAS</td>
-                          <td>7.342</td>
+                          <td>PESSOA 2</td>
                         </tr>
                         <tr>
-                          <td>SALDO</td>
-                          <td>7.342</td>
+                          <td>PESSOA 3</td>
                         </tr>
                         <tr>
                       </tbody>
                     </table>
                   </div>
                 </tab>
-                <tab heading="Transações">
-                  <div class="row">
-                    <label class="col-sm-3 col-form-label"> Nome </label>
-                    <div class="col-sm-9">
-                      <div class="form-group">
-                        <input
-                          class="form-control"
-                          placeholder="Nome da transação"
-                          type="text"
-                        />
-                      </div>
-                    </div>
+                <tab heading="Moderado">
+                  <div>
+                    <table class="table tablesorter" id="moderado">
+                      <tbody>
+                        <tr>
+                          <td>PESSOA A</td>
+                        </tr>
+                        <tr>
+                          <td>PESSOA B</td>
+                        </tr>
+                        <tr>
+                          <td>PESSOA C</td>
+                        </tr>
+                        <tr>
+                      </tbody>
+                    </table>
                   </div>
-                  <div class="row">
-                    <label class="col-sm-3 col-form-label"> Categoria </label>
-                    <div class="col-sm-9">
-                      <div class="form-group">
-                        <select class="form-control">
-                          <option value="receita">Receita</option>
-                          <option value="despesa">Despesa</option>
-                        </select>
-                      </div>
-                    </div>
+                </tab>
+                <tab heading="Arrojado">
+                  <div>
+                    <table class="table tablesorter" id="arrojado">
+                      <tbody>
+                        <tr>
+                          <td>PESSOA X</td>
+                        </tr>
+                        <tr>
+                          <td>PESSOA Y</td>
+                        </tr>
+                        <tr>
+                          <td>PESSOA Z</td>
+                        </tr>
+                        <tr>
+                      </tbody>
+                    </table>
                   </div>
-                  <div class="row">
-                    <label class="col-sm-3 col-form-label"> Data </label>
-                    <div class="col-sm-9">
-                      <div class="form-group">
-                        <input
-                          class="form-control"
-                          type="date"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <label class="col-sm-3 col-form-label"> Valor </label>
-                    <div class="col-sm-9">
-                      <div class="form-group">
-                        <input
-                          class="form-control"
-                          placeholder="200.00"
-                          type="number"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    class="btn btn-simple btn-danger btn-icon btn-round float-right"
-                    type="submit"
-                  >
-                    <i class="tim-icons icon-send"> </i>
-                  </button>
                 </tab>
               
               </tabset>
