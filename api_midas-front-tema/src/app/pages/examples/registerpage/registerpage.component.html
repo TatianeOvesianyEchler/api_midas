@@ -50,6 +50,26 @@
                       (blur)="focus3 = false"
                     />
                   </div>
+                  <div 
+                    class="input-group"
+                    [ngClass]="{ 'input-group-focus': focus4 === true }"
+                  >
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="tim-icons icon-bank"> </i>
+                      </div>
+                    </div>
+                    <input
+                      class="form-control"
+                      placeholder="Perfil de investidor"
+                      type="text"
+                      onfocus="(this.type='text')"
+                      onfocusout="(this.type='text')"
+                      (focus)="focus4 = true"
+                      (blur)="focus4 = false"
+                    />
+                  
+                  </div>
                   <div
                     class="input-group"
                     [ngClass]="{ 'input-group-focus': focus1 === true }"
