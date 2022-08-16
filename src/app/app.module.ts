@@ -24,9 +24,11 @@ import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.c
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 import { WalletpageComponent } from "./pages/examples/walletpage/walletpage.component";
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent
     // IndexComponent,
     // ProfilepageComponent,
     // RegisterpageComponent,
