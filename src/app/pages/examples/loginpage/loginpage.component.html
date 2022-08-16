@@ -8,7 +8,7 @@
       <a
         class="navbar-brand"
         placement="bottom"
-        [routerLink]="['#home']"
+        [routerLink]="['/home']"
         target="_blank"
       >
         <span> MIDA$ • </span> Controle Financeiro
@@ -34,7 +34,7 @@
     >
       <div class="navbar-collapse-header">
         <div class="row">
-          <div class="col-6 collapse-brand"><a> BLK• </a></div>
+          <div class="col-6 collapse-brand"><a> MIDA$ • </a></div>
           <div class="col-6 collapse-close text-right">
             <button
               aria-controls="navigation-index"
@@ -58,7 +58,7 @@
           > Home </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/landing']"> Perfil de investidor </a>
+          <a class="nav-link" [routerLink]="['/landing']"> Perfil de Investidor </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/wallet']"> Carteiras </a>
@@ -87,12 +87,59 @@
     <div class="squares square5"></div>
     <div class="squares square6"></div>
     <div class="squares square7"></div>
-    <div class="container">
-      <div class="content-center brand">
-        <h1 class="h1-seo">MIDA$</h1>
-        <h3>
-          Acompanhe de perto a sua carteira e alcance os seus objetivos.
-        </h3>
+    <div class="justify-content-center d-flex" id="login" style="margin-bottom: 250px; margin-top: 250px;">
+      <div class="card card-register align-items-center col-3">
+        <div class="card-header">
+          <h4 class="card-title text-white w-auto p-3 titulo-cadastro">Login</h4>
+        </div>
+        <div class="card-body">
+          <form class="form">
+            <div
+              class="input-group"
+              [ngClass]="{ 'input-group-focus': focus1 === true }"
+            >
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="tim-icons icon-email-85"> </i>
+                </div>
+              </div>
+              <input
+                class="form-control"
+                placeholder="E-mail"
+                type="email"
+                (focus)="focus1 = true"
+                (blur)="focus1 = false"
+              />
+            </div>
+            <div
+              class="input-group"
+              [ngClass]="{ 'input-group-focus': focus2 === true }"
+            >
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <i class="tim-icons icon-lock-circle"> </i>
+                </div>
+              </div>
+              <input
+                class="form-control"
+                placeholder="Senha"
+                type="password"
+                (focus)="focus2 = true"
+                (blur)="focus2 = false"
+              />
+            </div>
+          </form>
+        </div>
+        <p class="category">Não possui uma conta? </p>
+        <a [routerLink]="['/register']">Cadastre-se</a>
+        <div class="card-footer">
+          <a
+            class="btn btn-primary btn-round btn-lg"
+            href="javascript:void(0)"
+          >
+            Confirmar
+          </a>
+        </div>
       </div>
     </div>
   </div>

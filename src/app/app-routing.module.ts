@@ -8,6 +8,7 @@ import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.c
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 import { WalletpageComponent } from "./pages/examples/walletpage/walletpage.component";
+import { LoginpageComponent } from "./pages/examples/loginpage/loginpage.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: "profile", component: ProfilepageComponent },
   { path: "wallet", component: WalletpageComponent },
   { path: "register", component: RegisterpageComponent },
-  { path: "landing", component: LandingpageComponent }
+  { path: "landing", component: LandingpageComponent },
+  { path: "login", component: LoginpageComponent }
 ];
 
 @NgModule({

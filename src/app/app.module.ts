@@ -24,6 +24,7 @@ import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.c
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 import { WalletpageComponent } from "./pages/examples/walletpage/walletpage.component";
+import { LoginpageComponent } from "./pages/examples/loginpage/loginpage.component";
 import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [

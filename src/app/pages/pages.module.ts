@@ -22,6 +22,7 @@ import { ProfilepageComponent } from "./examples/profilepage/profilepage.compone
 import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
 import { WalletpageComponent } from "./examples/walletpage/walletpage.component";
+import { LoginpageComponent } from "./examples/loginpage/loginpage.component";
 
 @NgModule({
   imports: [
@@ -47,14 +48,16 @@ import { WalletpageComponent } from "./examples/walletpage/walletpage.component"
     ProfilepageComponent,
     RegisterpageComponent,
     LandingpageComponent,
-    WalletpageComponent
+    WalletpageComponent,
+    LoginpageComponent
   ],
   exports: [
     IndexComponent,
     ProfilepageComponent,
     RegisterpageComponent,
     LandingpageComponent,
-    WalletpageComponent
+    WalletpageComponent,
+    LoginpageComponent
   ],
   providers: []
 })
