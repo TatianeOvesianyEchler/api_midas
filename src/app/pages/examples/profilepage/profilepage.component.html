@@ -1,0 +1,117 @@
+
+<div class="wrapper">
+  <div class="page-header" style="margin-bottom: 250px;">
+    <img class="dots" src="assets/img/dots.png" />
+
+    <img class="path" src="assets/img/path4.png" />
+
+    <div class="container align-items-center">
+      <div class="row">
+        <div class="col-lg-6 col-md-6">
+          <h1 class="profile-title text-left">Controle Financeiro</h1>
+          <h5 class="text-on-back">$</h5>
+          <p class="profile-description">
+            Cadastre suas transações de receita e despesa e acompanhe o seu saldo.<br>
+            Alcance seus objetivos através de planejamento e investimentos adequados para o seu perfil.
+          </p>
+          <button class="btn btn-primary mr-1">Consulte suas recomendações de investimento</button>
+          
+        </div>
+        <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+          <div class="card card-coin card-plain">
+            <div class="card-header">
+              <img
+                class="img-center img-fluid rounded-circle"
+                src="assets/img/mike.jpg"
+              />
+
+              <h4 class="title">Sua carteira</h4>
+            </div>
+            <div class="card-body">
+              <tabset
+                class="nav-tabs-danger justify-content-center tab-subcategories"
+              >
+                <tab heading="Saldo">
+                  <div>
+                    <table class="table tablesorter" id="plain-table">
+                      <tbody>
+                        <tr>
+                          <td>RECEITAS</td>
+                          <td>7.342</td>
+                        </tr>
+                        <tr>
+                          <td>DESPESAS</td>
+                          <td>7.342</td>
+                        </tr>
+                        <tr>
+                          <td>SALDO</td>
+                          <td>7.342</td>
+                        </tr>
+                        <tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </tab>
+                <tab heading="Transações">
+                  <div class="row">
+                    <label class="col-sm-3 col-form-label"> Nome </label>
+                    <div class="col-sm-9">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          placeholder="Nome da transação"
+                          type="text"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-3 col-form-label"> Categoria </label>
+                    <div class="col-sm-9">
+                      <div class="form-group">
+                        <select class="form-control text-muted">
+                          <option value="receita">Receita</option>
+                          <option value="despesa">Despesa</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-3 col-form-label"> Data </label>
+                    <div class="col-sm-9">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          type="date"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label class="col-sm-3 col-form-label"> Valor </label>
+                    <div class="col-sm-9">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          placeholder="200.00"
+                          type="number"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="btn btn-simple btn-danger btn-icon btn-round float-right"
+                    type="submit"
+                  >
+                    <i class="tim-icons icon-send"> </i>
+                  </button>
+                </tab>
+              
+              </tabset>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
