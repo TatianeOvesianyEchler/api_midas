@@ -13,7 +13,7 @@
                 <h4 class="card-title text-white w-auto p-3">Cadastre-se</h4>
               </div>
               <div class="card-body">
-                <form class="form">
+                <form class="form" [formGroup]="registerPageForm" (submit)="cadastrar()">
                   <div
                     class="input-group"
                     [ngClass]="{ 'input-group-focus': focus === true }"
@@ -29,8 +29,10 @@
                       type="text"
                       (focus)="focus = true"
                       (blur)="focus = false"
+                      formControlName = "nome"
                     />
-                  </div>
+                    <app-mensagem *ngIf="registerPageForm.get('nome')?.errors && registerPageForm.get('nome')?.touched" mensagem="Nome obrigatório"></app-mensagem>
+                  </div>                  
                   <div
                     class="input-group"
                     [ngClass]="{ 'input-group-focus': focus3 === true }"
@@ -48,7 +50,9 @@
                       onfocusout="(this.type='text')"
                       (focus)="focus3 = true"
                       (blur)="focus3 = false"
+                      formControlName = "DataDeNascimento"
                     />
+                    <app-mensagem *ngIf="registerPageForm.get('DataDeNascimento')?.errors && registerPageForm.get('DataDeNascimento')?.touched" mensagem="Data de nascimento obrigatória"></app-mensagem>
                   </div>
                   <div 
                     class="input-group"
@@ -67,8 +71,9 @@
                       onfocusout="(this.type='text')"
                       (focus)="focus4 = true"
                       (blur)="focus4 = false"
+                      formControlName = "perfil"
                     />
-                  
+                    <app-mensagem *ngIf="registerPageForm.get('perfil')?.errors && registerPageForm.get('perfil')?.touched" mensagem="Perfil de investidor obrigatório"></app-mensagem>
                   </div>
                   <div
                     class="input-group"
@@ -85,7 +90,11 @@
                       type="email"
                       (focus)="focus1 = true"
                       (blur)="focus1 = false"
+                      formControlName = "email"
                     />
+                    <app-mensagem *ngIf="registerPageForm.get('email')?.errors?.required && registerPageForm.get('email')?.touched" mensagem="E-mail obrigatório"></app-mensagem>
+                    <app-mensagem *ngIf="registerPageForm.get('email')?.errors?.email && registerPageForm.get('email')?.touched" mensagem="E-mail inválido"></app-mensagem>
+                    <app-mensagem *ngIf="registerPageForm.get('email')?.errors?.usuarioExistente && registerPageForm.get('email')?.touched" mensagem="E-mail já cadastrado"></app-mensagem>
                   </div>
                   <div
                     class="input-group"
@@ -102,11 +111,13 @@
                       type="password"
                       (focus)="focus2 = true"
                       (blur)="focus2 = false"
+                      formControlName = "senha"
                     />
+                    <app-mensagem *ngIf="registerPageForm.get('senha')?.errors && registerPageForm.get('senha')?.touched" mensagem="Senha obrigatória"></app-mensagem>
                   </div>
                   <div class="form-check text-left">
                     <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" />
+                      <input class="form-check-input" type="checkbox" required/>
 
                       <span class="form-check-sign"> </span> I agree to the
                       <a href="javascript:void(0)"> terms and conditions </a> .
@@ -114,14 +125,17 @@
                   </div>
                 </form>
               </div>
-              <div class="card-footer">
+              <button class="card-footer btn btn-round btn-lg btn-danger btn-block">
+                Confirmar
+              </button>
+              <!-- <div class="card-footer">
                 <a
                   class="btn btn-danger btn-round btn-lg"
                   href="javascript:void(0)"
                 >
                   Confirmar
                 </a>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
