@@ -27,6 +27,7 @@ import { WalletpageComponent } from "./pages/examples/walletpage/walletpage.comp
 import { LoginpageComponent } from "./pages/examples/loginpage/loginpage.component";
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AutenticacaoModule } from "./autenticacao/autenticacao.module";
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     // TooltipModule.forRoot(),
     // CollapseModule.forRoot(),
     // TabsModule.forRoot(),
-    PagesModule
+    PagesModule,
+    AutenticacaoModule
     // PaginationModule.forRoot(),
     // AlertModule.forRoot(),
     // BsDatepickerModule.forRoot(),
